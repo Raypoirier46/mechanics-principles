@@ -1,14 +1,13 @@
-import React from 'react';
-import Layout from '../components/layout';
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import SEO from '../components/seo'
+import React from 'react'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+import blogStyles from './recent-blog-preview.module.scss'
 
-import blogStyles from './blog.module.scss'
-
-const BlogPage = () => {
+const RecentPosts = () => {
     const data = useStaticQuery(graphql`
     query{
-  allContentfulBlogPost(sort: {
+  allContentfulBlogPost(
+    limit: 4,
+    sort: {
     fields: publishedDate,
       order: DESC
     
@@ -24,14 +23,8 @@ const BlogPage = () => {
   }
 } 
     `)
-
+    
     return (
-        <Layout>
-        <SEO 
-          title='Blog'
-          description={`All of our articles to help you learn and repair like the pros`}
-         />
-            <h1>Blog</h1>
             <ol className={blogStyles.posts}>
                 {data.allContentfulBlogPost.edges.map((edge) => {
                     return (
@@ -44,8 +37,7 @@ const BlogPage = () => {
                     )
                     })}
             </ol>
-        </Layout>
     )
 }
 
-export default BlogPage;
+export default RecentPosts;

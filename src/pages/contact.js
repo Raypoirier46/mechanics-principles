@@ -1,13 +1,20 @@
 import React from 'react'
 import Layout from '../components/layout';
-import Head from '../components/head';
+import SEO from '../components/seo';
 
 const ContactPage = () => {
     return (
         <Layout>
-        <Head title="Contact" />
+        <SEO 
+            title="Contact"
+            description={`Contact us to make suggestions and offer feedback`}
+         />
             <h1>Contact</h1>
-            <p>The best way to contact me is by twitter <a href='https://twitter.com/raymond_poirier' target='blank'>@raymond_poirier</a></p>
+            <p>Have any ideas or suggestions on future posts?</p>
+            <p>We'd love to hear from you!</p>
+            <p>We are also looking for writer's with mechanical experience or mechanic's with writing experience.
+            Let us know if you're interested!</p>
+            <p>Send us an <a href='mailto:ray_poirier@hotmail.com'>email!</a></p>
         </Layout>
     )
 }

@@ -1,28 +1,30 @@
 import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 import headerStyles from './header.module.scss'
+import Logo from '../images/main-logo.png'
 
 const Header = () => {
-    const data = useStaticQuery(graphql`
-    query {
-        site {
-            siteMetadata {
-            title
-            }
-  }
-}
-    `)
+//     const data = useStaticQuery(graphql`
+//     query {
+//         site {
+//             siteMetadata {
+//             title
+//             }
+//   }
+// }
+//     `)
 
     return (
         <header className={headerStyles.header}>
-            <h1>
-                <Link className={headerStyles.title} to='/'>
-                    {data.site.siteMetadata.title}
-                </Link>
-            </h1>
             <nav>
                 <ul className={headerStyles.navList}>
+                    <li>
+                        <img
+                            className={headerStyles.logo}
+                            src={Logo}
+                            alt="the mechanic's principles logo" />
+                    </li>
                     <li>
                         <Link 
                             className={headerStyles.navItem} 

@@ -1,20 +1,9 @@
-import React from 'react'
-import { graphql } from 'gatsby';
+import React from 'react';
+import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/layout'
 import Head from '../components/head';
-
-// export const query = graphql`
-// query($slug: String!) {
-//   markdownRemark(fields: { slug: { eq: $slug }}) {
-//     frontmatter {
-//       Title
-//       date
-//     }
-//     html
-//   }
-// }`
 
 export const query = graphql`
 query($slug: String!) {
@@ -34,19 +23,26 @@ const BlogPost = (props) => {
       "embedded-asset-block": (node) => {
         const alt = node.data.target.fields.title['en-US']
         const url = node.data.target.fields.file['en-US'].url
-        return <img alt={alt} src={url} />
+        return (
+        <img alt={alt} src={url} />
+        )
       }
     }
   }
     return (
         <Layout>
         <Head title={props.data.contentfulBlogPost.title} />
+          <p>
+            <Link to='/blog'>Go Back</Link>
+          </p>
             <h1>{props.data.contentfulBlogPost.title}</h1>
             <p>{props.data.contentfulBlogPost.publishedDate}</p>
             {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
-            {/* <h1>{props.data.markdownRemark.frontmatter.Title}</h1>
-            <p>{props.data.markdownRemark.frontmatter.date}</p>
-            <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} /> */}
+          <p>
+            <Link to='/blog'>
+              Go Back
+            </Link>
+          </p>
         </Layout>
     )
 };

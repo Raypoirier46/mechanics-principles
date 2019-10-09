@@ -4,7 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Bootcamp',
+    title: 'Mechanic Principles',
+    description: 'Learn what the pros know, be a better Mechanic',
     author: 'Raymond Poirier'
   },
   plugins: [
@@ -35,6 +36,13 @@ module.exports = {
             options: {
               maxWidth: 750,
               linkImagesToOriginal: false
+            }
+          },
+          {
+            resolve: 'gatsby-remark-images-contentful',
+            options: {
+              maxWidth: 750,
+              linkImagesToOriginal: true
             }
           }
         ]
