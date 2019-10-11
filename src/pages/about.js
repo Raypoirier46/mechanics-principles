@@ -15,14 +15,14 @@ const AboutPage = () => {
             skills to the next level. I created this site help them learn the PRINCIPLES that can be applied to anything
             they repair. It can be a car, a motorcycle, a lawnmower, a bulldozer or combine harvester. These principles
             remain constant so you can work on anything you want. You can read why every mechanic needs principles 
-            <Link to="/principles"> here.</Link>
+            <Link to="/blog/principles"> here.</Link>
             </p>
             <br />
             <h1>About Me</h1>
             <p>
                 So why should you listen to me?<br />
                 <br />
-                I'm a profesional <Link to="http://www.red-seal.ca/trades/.1gr.3_t.2ch-eng.html">Agricultural Equipment Technician</Link> of 6 years but I have been around machines and
+                I'm a profesional <a href="http://www.red-seal.ca/trades/.1gr.3_t.2ch-eng.html">Agricultural Equipment Technician</a> of 6 years but I have been around machines and
                 fixing them my whole life.
             </p>
             <p>
