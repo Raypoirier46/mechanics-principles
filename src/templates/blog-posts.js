@@ -1,14 +1,15 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import SEO from '../components/seo'
 
 import Layout from '../components/layout'
-import Head from '../components/head';
 
 export const query = graphql`
 query($slug: String!) {
   contentfulBlogPost(slug: {eq: $slug}) {
     title
+    description
     publishedDate(formatString: "MMMM Do, YYYY")
     body {
       json
@@ -31,7 +32,10 @@ const BlogPost = (props) => {
   }
     return (
         <Layout>
-        <Head title={props.data.contentfulBlogPost.title} />
+        <SEO 
+          title={props.data.contentfulBlogPost.title}
+          description={props.data.contentfulBlogPost.description}
+        />
           <p>
             <Link to='/blog'>Go Back</Link>
           </p>
