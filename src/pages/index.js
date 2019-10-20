@@ -8,7 +8,7 @@ const IndexPage = () => {
     return(
             <Layout>
             <SEO 
-                title='Home'
+                title='Master the Fundamentals and Principles of Being a Mechanic'
                 description={`Mechanic Principles of the professionals to help you repair anything in your life`}
              />
                 <h1>Learn the Principles to take your mechanical skills to the next level</h1>
